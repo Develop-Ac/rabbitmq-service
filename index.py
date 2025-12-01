@@ -5,9 +5,9 @@ import os
 
 app = FastAPI()
 
-RABBITMQ_HOST = "intranet-rabbitmq.naayqg.easypanel.host"
-RABBITMQ_USER = "guest"
-RABBITMQ_PASS = "guest"
+RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "")
+RABBITMQ_USER = os.getenv("RABBITMQ_USER", "")
+RABBITMQ_PASS = os.getenv("RABBITMQ_PASS", "")
 
 def send_to_rabbitmq(message: str, QUEUE_NAME):
     credentials = pika.PlainCredentials(RABBITMQ_USER, RABBITMQ_PASS)
