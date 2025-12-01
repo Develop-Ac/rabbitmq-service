@@ -36,4 +36,4 @@ EXPOSE 8000
 
 # Comando para subir a API
 # Se o arquivo NÃO for main.py, altere "main:app" para <arquivo>:<instância_fastapi>
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "index:app", "--host", "0.0.0.0", "--port", "8000"]
